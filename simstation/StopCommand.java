@@ -6,7 +6,9 @@ public class StopCommand extends Command {
         super(model);
     }
 
-    public void execute() {
-        ;
+    public void execute(){
+        Simulation s = (Simulation) model;
+        s.stop();
+        s.changed();
     }
 }
