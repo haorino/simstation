@@ -6,6 +6,7 @@ import java.awt.*;
 public class SimulationView extends View {
     public SimulationView(Simulation s) {
         super(s);
+        setBackground(Color.GRAY);
     }
 
     public void paintComponent(Graphics gc) {
