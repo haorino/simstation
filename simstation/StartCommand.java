@@ -8,6 +8,8 @@ public class StartCommand extends Command {
     }
 
     public void execute(){
-        ;
+        Simulation s = (Simulation) model;
+        s.start();
+        s.changed();
     }
 }
