@@ -7,6 +7,11 @@ public class SuspendCommand extends Command {
     }
 
     public void execute() {
-        ;
+        Simulation s = (Simulation) model;
+
+        if(!s.getAgentsSuspended()){
+            s.suspend();
+            s.changed();
+        }
     }
 }
