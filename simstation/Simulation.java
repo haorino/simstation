@@ -37,4 +37,11 @@ public class Simulation extends Model {
     public List<Agent> getAgents() {
         return agents;
     }
+
+    public boolean getAgentsSuspended() {
+        for(Agent i : agents) {
+            return i.suspended;
+        }
+        return false;
+    }
 }
