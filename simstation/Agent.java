@@ -2,6 +2,7 @@ package simstation;
 
 import mvc.*;
 import java.awt.*;
+
 public abstract class Agent extends Bean implements Runnable {
     protected String name;
     public Heading heading;
