@@ -38,6 +38,8 @@ public class Simulation extends Model {
         return agents;
     }
 
+    public void addAgent(Agent a){agents.add(a);}
+
     public boolean getAgentsSuspended() {
         for(Agent i : agents) {
             return i.suspended;
