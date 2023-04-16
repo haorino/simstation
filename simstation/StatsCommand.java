@@ -8,6 +8,12 @@ public class StatsCommand extends Command {
     }
 
     public void execute(){
-        ;
+        Simulation simulation = (Simulation) model;
+        String[] stats = simulation.getStats();
+        String message ="";
+        for(String s : stats) {
+            message += s + "\n";
+        }
+        mvc.Utilities.inform(message);
     }
 }
