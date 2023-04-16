@@ -52,14 +52,6 @@ public abstract class Agent extends Bean implements Runnable {
 
     public synchronized void resume() { notify(); }
 
-    public int getX() {
-        return xc;
-    }
-
-    public int getY() {
-        return yc;
-    }
-
     public void move(int steps) {
         if(heading == Heading.NORTH){
             yc -= steps;
@@ -90,12 +82,6 @@ public abstract class Agent extends Bean implements Runnable {
 
     public void setAgentColor(Color agentColor) {
         this.agentColor = agentColor;
-    }
-    
-    public int distance(Agent a){
-        int distance = (int)(Math.sqrt((a.getY() - yc) * (a.getY() - yc)
-                            + (a.getX() - xc) * (a.getX() - xc)));
-        return distance;
     }
     
     public void setWorld(Simulation s){
