@@ -45,7 +45,23 @@ public class Simulation extends Model {
     }
 
     public synchronized Agent getNeighbor(Agent asker, double radius) {
-        return null;
+        int xc = asker.xc;
+        int yc = asker.yc;
+
+        ArrayList<Agent> nearby = new ArrayList<>();
+        for(Agent a: agents){
+            if(distance(xc,a.xc,yc,a.yc) < radius){
+                nearby.add(a);
+            }
+        }
+        if(nearby.size() == 0){
+            return null;
+        }
+        return nearby.get(Utilities.rng.nextInt(nearby.size()));
+    }
+
+    private double distance(int x1,int x2,int y1,int y2){
+        return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
 
     public void populate() {}

@@ -17,27 +17,17 @@ class Bird extends Agent {
 
     public void update() {
         // Find a random neighbor and copy its speed and heading
-        ArrayList<Agent> nearby = new ArrayList<>();
-        for(Agent a: world.getAgents()){
-            if(distance(xc,a.xc,yc,a.yc) < 15){
-                nearby.add(a);
-            }
-        }
-        int steps;
-        if(nearby.size() == 0){
+        Agent neighbor = world.getNeighbor(this, 15);
+
+        if(neighbor == null){
             heading = Heading.random();
             speed = Utilities.rng.nextInt(10) + 1;
         }else{
-            Random r = new Random();
-            Bird neighbor = (Bird)nearby.get(r.nextInt(nearby.size()));
-            heading = neighbor.heading;
-            speed = neighbor.speed;
+            Bird b = (Bird)neighbor;
+            heading = b.heading;
+            speed = b.speed;
         }
         move(speed);
-    }
-
-    private double distance(int x1,int x2,int y1,int y2){
-        return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
 }
 
