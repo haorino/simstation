@@ -3,7 +3,7 @@ package simstation;
 import mvc.*;
 
 public class SimulationFactory implements AppFactory {
-    public Simulation makeModel() {
+    public Model makeModel() {
         return new Simulation();
     }
 
