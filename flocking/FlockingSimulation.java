@@ -4,10 +4,11 @@ import mvc.*;
 import simstation.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 
 class Bird extends Agent {
-    int speed = Utilities.rng.nextInt(2)+1;
+    int speed = Utilities.rng.nextInt(3)+1;
 
     public Bird() {
         super();
@@ -58,6 +59,22 @@ public class FlockingSimulation extends Simulation {
     public static void main(String[] args) {
         AppPanel panel = new SimulationPanel(new RandomWalkFactory());
         panel.display();
+    }
+
+    @Override
+    public String[] getStats(){
+        int[] speeds = new int[5];
+        for(Agent a: agents){
+            Bird b = (Bird)a;
+            speeds[b.speed]++;
+        }
+
+        String[] stats = new String[6];
+        for(int i = 0; i < speeds.length; i++){
+            stats[i] = "bird at speed " + i + ": " + speeds[i];
+        }
+        stats[5] = "clock = " + this.getClock();
+        return stats;
     }
 
 }
