@@ -1,7 +1,7 @@
 package simstation;
 import mvc.Utilities;
 
-public class Heading {
+public enum Heading {
     NORTH,
     SOUTH,
     EAST,
