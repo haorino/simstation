@@ -2,25 +2,22 @@ package simstation;
 
 import mvc.*;
 import javax.swing.*;
+import java.awt.*;
 
 public class SimulationPanel extends AppPanel {
     public SimulationPanel(AppFactory factory) {
         super(factory);
-        JButton start = new JButton("Start");
-        start.addActionListener(this);
-        super.addControl(start);
-        JButton suspend = new JButton("Suspend");
-        suspend.addActionListener(this);
-        super.addControl(suspend);
-        JButton resume = new JButton("Resume");
-        resume.addActionListener(this);
-        super.addControl(resume);
-        JButton stop = new JButton("Stop");
-        stop.addActionListener(this);
-        super.addControl(stop);
-        JButton stats = new JButton("Stats");
-        stats.addActionListener(this);
-        super.addControl(stats);
+        controlPanel.setLayout(new GridLayout(5, 1));
+        String[] buttons = {"Start", "Suspend", "Resume", "Stop", "Stats"};
+        for(String name : buttons) {
+            JButton btn = new JButton(name);
+            btn.addActionListener(this);
+            JPanel btnPanel = new JPanel();
+            btnPanel.setLayout(new FlowLayout());
+            btnPanel.setBackground(Color.pink);
+            btnPanel.add(btn);
+            super.addControl(btnPanel);
+        }
     }
 
     public static void main(String[] args) {
