@@ -50,7 +50,7 @@ public class Simulation extends Model {
 
         ArrayList<Agent> nearby = new ArrayList<>();
         for(Agent a: agents){
-            if(distance(xc,a.xc,yc,a.yc) < radius){
+            if(distance(xc,a.xc,yc,a.yc) <= radius){
                 nearby.add(a);
             }
         }

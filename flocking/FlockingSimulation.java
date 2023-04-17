@@ -3,9 +3,6 @@ package flocking;
 import mvc.*;
 import simstation.*;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Random;
 
 class Bird extends Agent {
     int speed = Utilities.rng.nextInt(3)+1;

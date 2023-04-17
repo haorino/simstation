@@ -25,7 +25,7 @@ class Plague extends Agent {
     public void update() {
         if(this.isInfected()){
             Plague neighbor = (Plague)world.getNeighbor(this, plagueSimulation.VIRULENCE);
-            if(neighbor != null && neighbor.isInfected() == false){
+            if(neighbor != null && !neighbor.isInfected()){
                 if(resistance < Utilities.rng.nextInt(100)){
                     neighbor.setInfected(true);
                 }
