@@ -1,4 +1,4 @@
-package randomwalk;
+package randomWalks;
 
 import mvc.*;
 import simstation.*;
@@ -20,13 +20,12 @@ class Drunk extends Agent {
 
 class RandomWalkFactory extends SimulationFactory {
     public Model makeModel() {
-        return new RandomWalkSimulation();
+        return new randomWalkSimulation();
     }
     public String getTitle() { return "Random Walks";}
 }
 
-public class RandomWalkSimulation extends Simulation {
-
+public class randomWalkSimulation extends Simulation {
     public void populate() {
         for(int i = 0; i < 15; i++)
             addAgent(new Drunk());
