@@ -1,4 +1,4 @@
-package randomWalks;
+package randomwalks;
 
 import mvc.*;
 import simstation.*;
